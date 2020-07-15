@@ -1,0 +1,78 @@
+<view class="apt-user">
+  <!-- 用户信息开始 -->
+  <view class="apt-user-profile">
+    <block wx:if="{{userInfo.nickName}}">
+      <view class="user-profile-bg">
+        <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="image-wrapper">
+       <image src="{{userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="nickName">
+      {{userInfo.nickName}}
+      </view>
+    </block>
+    <block wx:else>
+      <button open-type="getUserInfo"
+        bindgetuserinfo="getUserInfoFunc"
+      >登陆</button>
+    </block>
+  
+  </view>
+  <!-- 用户信息结束 -->
+  <!-- 
+    订单功能区开始
+   -->
+  <view class="apt-user-order">
+    <view class="order-item">
+      <view class="iconfont icon-icon-test"></view>
+      <view class="text">代收款</view>
+    </view>
+  
+    <view class="order-item">
+      <view class="iconfont icon-daishouhuo"></view>
+      <view class="text">待收货</view>
+    </view>
+  
+    <view class="order-item">
+      <view class="iconfont icon-tuikuan"></view>
+      <view class="text">退货/退款</view>
+    </view>
+  
+    <view class="order-item">
+      <view class="iconfont icon-quanbudingdan"></view>
+      <view class="text">全部订单</view>
+    </view>
+  
+  </view>
+
+  <!-- 
+    订单功能区结束
+   -->
+   <!-- 系统功能区开始 -->
+   <view class="apt-user-sysFunc">
+    <view class="sysFunc-item">
+      <view class="left">
+        <view class="iconfont icon-lianxikefu"></view>
+        <view class="text">联系客服</view>
+      </view>
+      <view class="right">400-618-4000</view>
+    </view>
+    <view class="sysFunc-item">
+      <view class="left">
+        <view class="iconfont icon-yijianfankui"></view>
+        <view class="text">意见反馈</view>
+      </view>
+      <view class="right"></view>
+    </view>
+    <view class="sysFunc-item">
+      <view class="left">
+        <view class="iconfont icon-ziyuan"></view>
+        <view class="text">当前版本</view>
+      </view>
+      <view class="right">v4.1.1</view>
+    </view>
+   </view>
+   <!-- 系统功能区结束 -->
+
+</view>

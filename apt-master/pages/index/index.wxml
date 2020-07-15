@@ -1,0 +1,50 @@
+<view class="apt-index">
+  <!-- 首页搜索开始 -->
+  <view class="search-input">
+    <navigator>
+      搜索
+    </navigator>
+  </view>
+  <!-- 首页搜索结束 -->
+  <!-- 轮播图开始 -->
+  <view class="apt-index-swiper">
+    <swiper indicator-dots="true" indicator-color="black" indicator-active-color="white" autoplay="true" interval="1000">
+      <swiper-item wx:for="{{swiper_list}}" wx:key="image_src">
+        <image src="{{item.image_src}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图结束 -->
+  <!-- 图片导航开始 -->
+  <view class="apt-index-nav">
+    <navigator wx:for="{{catItems}}" wx:key="image_src">
+      <image src="{{item.image_src}}" />
+    </navigator>
+  </view>
+  <!-- 图片导航结束 -->
+  <!-- 图片列表开始 -->
+  <view class="apt-index-floor">
+    <view 
+     wx:for="{{floorData}}"
+     wx:key="*this"
+    class="apt-index-floorList">
+      <!-- 图片标题开始 -->
+      <view class="floor-title">
+        {{item.floor_title.name}}
+      </view>
+      <!-- 图片标题结束 -->
+      <!-- 图片列表开始 -->
+      <view class="image-wrapper">
+        <navigator wx:for="{{item.product_list}}"
+        wx:key="image_src"
+        wx:for-item="v"
+        wx:for-index="i"
+        >
+        <image src="{{v.image_src}}"/>
+        </navigator>
+      </view>
+      <!-- 图片列表结束 -->
+    </view>
+  </view>
+  <!-- 图片列表结束 -->
+</view>
